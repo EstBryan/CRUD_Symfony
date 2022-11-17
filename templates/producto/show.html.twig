@@ -3,32 +3,40 @@
 {% block title %}Producto{% endblock %}
 
 {% block body %}
-    <h1>Producto</h1>
+<div class="container mt-4">
+    <style>
+        body{
+            background-color: lightyellow;
+        }
+    </style>
+    <h1 class="text-center">Producto</h1>
 
-    <table class="table">
+    <table class="table table-striped align-middle">
         <tbody>
             <tr>
-                <th>IdProducto</th>
+                <th class="text-center">C&oacute;digo</th>
                 <td>{{ producto.idProducto }}</td>
             </tr>
             <tr>
-                <th>Descripcion</th>
+                <th class="text-center">Descripci&oacute;n</th>
                 <td>{{ producto.descripcion }}</td>
             </tr>
             <tr>
-                <th>Precio</th>
+                <th class="text-center">Precio</th>
                 <td>{{ producto.precio }}</td>
             </tr>
             <tr>
-                <th>Existencias</th>
+                <th class="text-center">Existencias</th>
                 <td>{{ producto.existencias }}</td>
             </tr>
         </tbody>
     </table>
+    <div style="text-align: center;">
+        <a href="{{ path('app_producto_index') }}" class="btn btn-success">Volver a lista</a>
 
-    <a href="{{ path('app_producto_index') }}">back to list</a>
-
-    <a href="{{ path('app_producto_edit', {'idProducto': producto.idProducto}) }}">edit</a>
+        <a href="{{ path('app_producto_edit', {'idProducto': producto.idProducto}) }}" class="btn btn-primary">Editar</a>
+    </div> 
 
     {{ include('producto/_delete_form.html.twig') }}
+</div>
 {% endblock %}
