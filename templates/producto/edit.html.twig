@@ -3,11 +3,22 @@
 {% block title %}Edit Producto{% endblock %}
 
 {% block body %}
-    <h1>Edit Producto</h1>
+<div class="container mt-4">
+    <div class="class="row align-items-center" style="height:auto; background: aquamarine">
+    <div class="text-center">
+    <h1>Editar los elementos de Producto</h1>
+    </div>
+    </div>
 
-    {{ include('producto/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_producto_index') }}">back to list</a>
-
+    <div class="text-center">
+    {{ include('producto/_form.html.twig', {'button_label': 'Actualizar'}) }}
+    </div>
+    <div class="text-center">
+    <br/>
     {{ include('producto/_delete_form.html.twig') }}
+    </div>
+    <div class="float-left">
+    <a href="{{ path('app_producto_index') }}"class="btn btn-dark">Volver al Listado</a>
+    </div>
+</div>
 {% endblock %}
